@@ -6,8 +6,13 @@ async function bootstrap() {
   const app = await NestFactory.create(EncuestaModule);
 
   // Habilita CORS para permitir peticiones desde el frontend
+  const allowedOrigins = [
+    'http://localhost:3001',
+    'https://encuesta360-frontend.vercel.app',
+  ];
+  
   app.enableCors({
-    origin: 'https://encuesta360-frontend.vercel.app/', // Cambia si usas otro puerto en Next
+    origin: allowedOrigins,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   });
