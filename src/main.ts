@@ -19,10 +19,9 @@ async function bootstrap() {
 
 
   const config = new DocumentBuilder()
-    .setTitle('Encuestas API')
+    .setTitle('Encuesta API')
     .setDescription('API para gestionar encuestas')
     .setVersion('1.0')
-    .addTag('encuestas')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
